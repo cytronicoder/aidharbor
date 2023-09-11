@@ -1,0 +1,51 @@
+.charity-blurb {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  color: #fff;
+  margin: 10px 0;
+}
+
+.charity-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.charity-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.charity-name {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.charity-address,
+.charity-oneliner {
+  margin: 0;
+  font-size: 14px;
+}
+
+.charity-amount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.amount-raised {
+  font-size: 18px;
+}
+
+.cta-arrow {
+  font-size: 32px;
+  cursor: pointer;
+}
