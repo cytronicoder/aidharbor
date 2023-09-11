@@ -40,6 +40,7 @@ function App() {
     <>
       <div className="navbar">
         <div className="navbar-text">giving.ABC</div>
+        <div className="navbar-text">Partners</div>
         <div>
           {isWalletConnected ? (
             <div>{truncateAddress(account?.address as string)}</div>
