@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "backgroundImage": "https://redcross.sg/images/COVID19_Singapore_Red_Cross_rolls_out_more_support_for_communities_in_Singapore_and_the_Asia_Pacific.JPG",
+    "logo": "https://lawgic.info/wp-content/uploads/2016/09/Flag_of_the_Red_Cross.svg_.png",
+    "name": "Red Cross",
+    "address": "0x1234...5678",
+    "oneLiner": "Making a difference in many lives.",
+    "amountRaised": "10,000",
+    "writeup": "A brief description of the charity..."
+  },
+  {
+    "id": 2,
+    "backgroundImage": "https://example.com/bg2.jpg",
+    "logo": "https://example.com/logo2.png",
+    "name": "Charity Name 2",
+    "address": "0x9876...4321",
+    "oneLiner": "Helping the world, one step at a time.",
+    "amountRaised": "15,000",
+    "writeup": "Another brief description of the charity..."
+  }
+]
