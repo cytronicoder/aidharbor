@@ -39,7 +39,7 @@ function App() {
   return (
     <>
       <div className="navbar">
-        <div className="navbar-text">Create Aptos Dapp</div>
+        <div className="navbar-text">giving.ABC</div>
         <div>
           {isWalletConnected ? (
             <div>{truncateAddress(account?.address as string)}</div>
