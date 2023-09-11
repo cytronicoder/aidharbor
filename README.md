@@ -2,6 +2,15 @@
 
 Aptos-powered platform for transparent disaster relief coordination and eco-conscious cross-border payments
 
+## Getting Started
+
+1. run `pnpm install` to install dependencies; if you don't have pnpm installed, refer to [pnpm docs](https://pnpm.io/installation).
+2. create two `.env` files - one in the root directory and one in `frontend/` both with `VITE_APP_NETWORK=testnet`
+3. run `pnpm run move:init` to initialize a new CLI Profile.
+4. run `pnpm run move:compile` to compile your move contract.
+5. run `pnpm run move:publish` to publish your contract.
+6. run `pnpm start` to run your dApp.
+
 ## TODO
 
 ### Design and Layout
