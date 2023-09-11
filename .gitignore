@@ -1,3 +1,7 @@
+abi.ts
+.aptos
+move/build
+
 # Logs
 logs
 *.log
