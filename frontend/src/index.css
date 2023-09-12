@@ -9,9 +9,11 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
 body {
   margin: 0;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -32,10 +34,6 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-}
-
-.navbar a:hover {
-  background-color: red;
 }
 
 .center-container {

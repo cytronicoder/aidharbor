@@ -1,19 +1,18 @@
-import React from "react";
-import PartnerBlurb from "../components/PartnerBlurb";
+import Blurb from "../components/Blurb";
 import charities from '../../partners.json';
-import Modal from 'react-modal';
+import "../components/DisplayComponent.css";
  
 const About = () => {
     return (
-      <div className="center-container">
+      <div className="display-component">
         {charities.map(charity => (
-          <PartnerBlurb
+          <Blurb
             key={charity.id}
             backgroundImage={charity.backgroundImage}
             logo={charity.logo}
-            charityName={charity.name}
+            name={charity.name}
             oneLiner={charity.oneLiner}
-            unlockLevel={charity.unlockLevel}
+            // unlockLevel={charity.unlockLevel}
           />
         ))}
       </div>
