@@ -49,9 +49,10 @@
   position: absolute;
   bottom: 20px;
   right: 20px;
-  color: #fff;
-  background-color: #ec3750;
-  border: 1px solid #ec3750;
+  color: #000000;
+  font-weight: 700;
+  background-color: #fff;
+  border: 1px solid #fff;
   padding: .375rem .75rem;
   border-radius: .25rem;
   font-size: 1rem;

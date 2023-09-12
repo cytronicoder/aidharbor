@@ -4,23 +4,23 @@
     "backgroundImage": "https://redcross.sg/images/COVID19_Singapore_Red_Cross_rolls_out_more_support_for_communities_in_Singapore_and_the_Asia_Pacific.JPG",
     "logo": "https://lawgic.info/wp-content/uploads/2016/09/Flag_of_the_Red_Cross.svg_.png",
     "name": "Red Cross",
-    "oneLiner": "Making a difference in many lives.",
+    "oneLiner": "Helping people in need around the world",
     "amountRaised": 10000
   },
   {
     "id": 2,
-    "backgroundImage": "https://example.com/bg2.jpg",
-    "logo": "https://example.com/logo2.png",
-    "name": "Charity Name 2",
-    "oneLiner": "Helping the world, one step at a time.",
+    "backgroundImage": "https://water.org/media/images/Waterorg_About-Us_Footer.format-webp.webp",
+    "logo": "https://images.crunchbase.com/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/v1412161423/xr7qstkfm5qul48rtn8h.png",
+    "name": "Water.org",
+    "oneLiner": "Safe water and sanitation solutions",
     "amountRaised": 15000
   },
   {
     "id": 3,
-    "backgroundImage": "https://example.com/bg3.jpg",
-    "logo": "https://example.com/logo3.png",
-    "name": "Charity Name 3",
-    "oneLiner": "Working towards a better future.",
+    "backgroundImage": "https://roomtoread.blob.core.windows.net/cache-v8/d/6/2/d/7/a/d62d7afad7a01a005dd1a5eb50ef1beb296c34c7.webp",
+    "logo": "https://prod-tab2017-media.gladly.io/img/charities/charity-logos/room-to-read-20210809.png",
+    "name": "Room to Read",
+    "oneLiner": "Quality education for world's children",
     "amountRaised": 15000
   }
 ]
