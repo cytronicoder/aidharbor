@@ -25,7 +25,7 @@ const DisplayComponent: React.FC<DisplayComponentProps> = ({ jsonToBeDisplayed }
     return (
         <div className="container">
             <div className="display-component">
-                <Marquee className='marquee'>
+                <Marquee className='marquee' direction="left" pauseOnHover={true}>
                     {jsonToBeDisplayed.map(item => (
                         <div className="marquee-item" key={item.id}>
                             <Blurb

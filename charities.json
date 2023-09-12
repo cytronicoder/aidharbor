@@ -22,5 +22,13 @@
     "name": "Room to Read",
     "oneLiner": "Quality education for world's children",
     "amountRaised": 15000
+  },
+  {
+    "id": 4,
+    "backgroundImage": "https://roomtoread.blob.core.windows.net/cache-v8/d/6/2/d/7/a/d62d7afad7a01a005dd1a5eb50ef1beb296c34c7.webp",
+    "logo": "https://prod-tab2017-media.gladly.io/img/charities/charity-logos/room-to-read-20210809.png",
+    "name": "Room to Read",
+    "oneLiner": "Quality education for world's children",
+    "amountRaised": 15000
   }
 ]

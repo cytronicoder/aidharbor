@@ -1,29 +1,28 @@
 import { WalletSelector } from "@aptos-labs/wallet-adapter-ant-design";
 import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
 import charities from '../../charities.json';
-import { BrowserRouter as Router, Routes, Route }
-  from 'react-router-dom';
 
+import Hero from "../components/Hero";
 import DisplayComponent from '../components/DisplayComponent';
-import Partners from './partners';
 
 function App() {
   return (
-    <Router>
+    <div>
       <div className="navbar">
-        <div className="navbar-text">giving.ABC</div>
-        <a href="/">Charities</a>
-        <a href="/partners">Partners</a>
+        <div className="navbar-text">AidHarbor</div>
         <div>
           <WalletSelector />
         </div>
       </div>
 
-      <Routes>
-        <Route path='/' element={<DisplayComponent jsonToBeDisplayed={charities} />} />
-        <Route path='/partners' element={<Partners />} />
-      </Routes>
-    </Router>
+      <Hero
+        oneLiner="Empower. Relieve. Sustain."
+        description="Coordinate disaster relief and make cross-border payments sustainably with Aptos."
+        onCTAClick={() => console.log('CTA button clicked!')}
+        ctaText="Get Started"
+      />
+      <DisplayComponent jsonToBeDisplayed={charities} />
+    </div>
   );
 }
 
