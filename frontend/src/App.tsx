@@ -46,7 +46,7 @@ function App() {
         <Hero
           oneLiner="Empower. Relieve. Sustain."
           description="Coordinate disaster relief and make cross-border payments sustainably with Aptos."
-          onCTAClick={() => console.log('CTA button clicked!')}
+          onCTAClick={() => console.log(transactions)}
           ctaText="Get Started"
         />
 
