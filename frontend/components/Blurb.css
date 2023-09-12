@@ -1,0 +1,74 @@
+.blurb {
+  display: flex;
+  position: relative;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  color: #fff;
+  min-width: 500px;
+}
+
+.blurb:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.blurb-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.address,
+.oneliner {
+  margin: 0;
+  font-size: 14px;
+}
+
+.amount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.amount-raised {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 18px;
+}
+
+.btn-cta {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #000000;
+  font-weight: 700;
+  background-color: #fff;
+  border: 1px solid #fff;
+  padding: .375rem .75rem;
+  border-radius: .25rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  display: inline-block;
+}

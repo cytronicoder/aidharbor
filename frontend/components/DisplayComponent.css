@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  background-color: #051518;
+  height: 40vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.display-component {
+  max-width: 100%;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.marquee {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.marquee-item {
+  margin: 0 10px;
+}

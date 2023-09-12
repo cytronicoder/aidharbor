@@ -1,0 +1,17 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+devDependencies:
+  '@aptos-labs/aptos-cli':
+    specifier: latest
+    version: 0.0.11
+
+packages:
+
+  /@aptos-labs/aptos-cli@0.0.11:
+    resolution: {integrity: sha512-fCLjjOZZzVDZeUYLqWqvbO7AnPzSh84ql6SnF2inm6BzCredGYuYK8MPK+haPel7xq8Et85JVTzuUP4k3NM1Lw==}
+    hasBin: true
+    dev: true
