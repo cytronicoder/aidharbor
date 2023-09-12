@@ -8,6 +8,10 @@ import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
 import CharityBlurb from "../components/CharityBlurb";
 import './App.css';
 import charities from '../../charities.json';
+import { BrowserRouter as Router, Routes, Route }
+    from 'react-router-dom';
+
+import Partners from './partners';
 
 function App() {
   const { account, connected } = useWallet();
@@ -37,10 +41,11 @@ function App() {
   };
 
   return (
-    <>
+    <Router>
       <div className="navbar">
         <div className="navbar-text">giving.ABC</div>
-        <div className="navbar-text">Partners</div>
+        <a href="/">Charities</a>
+        <a href="/partners">Partners</a>
         <div>
           {isWalletConnected ? (
             <div>{truncateAddress(account?.address as string)}</div>
@@ -49,57 +54,63 @@ function App() {
           )}
         </div>
       </div>
-      <div className="center-container">
-        {charities.map(charity => (
-          <CharityBlurb
-            key={charity.id}
-            backgroundImage={charity.backgroundImage}
-            logo={charity.logo}
-            charityName={charity.name}
-            address={charity.address}
-            oneLiner={charity.oneLiner}
-            amountRaised={charity.amountRaised}
-            onCTAClick={() => openModal(charity)}
-          />
-        ))}
-        <Modal
-          isOpen={isModalOpen}
-          onRequestClose={closeModal}
-          contentLabel="Charity Details"
-        >
-          {currentCharity && (
-            <>
-              <h2>{currentCharity.name}</h2>
-              <p>{currentCharity.writeup}</p>
-              <p>Amount Raised: {currentCharity.amountRaised}</p>
 
-              <Tabs>
-                <TabList>
-                  <Tab>Live feed of donations</Tab>
-                  <Tab>Live feed of funds used</Tab>
-                  <Tab>Top Donors</Tab>
-                </TabList>
+      <Routes>
+        <Route path='/' element={
+          <div className="center-container">
+          {charities.map(charity => (
+            <CharityBlurb
+              key={charity.id}
+              backgroundImage={charity.backgroundImage}
+              logo={charity.logo}
+              charityName={charity.name}
+              address={charity.address}
+              oneLiner={charity.oneLiner}
+              amountRaised={charity.amountRaised}
+              onCTAClick={() => openModal(charity)}
+            />
+          ))}
+          <Modal
+            isOpen={isModalOpen}
+            onRequestClose={closeModal}
+            contentLabel="Charity Details"
+          >
+            {currentCharity && (
+              <>
+                <h2>{currentCharity.name}</h2>
+                <p>{currentCharity.writeup}</p>
+                <p>Amount Raised: {currentCharity.amountRaised}</p>
 
-                <TabPanel>
-                  {/* Content for Live feed of donations */}
-                  <p>Donations data here...</p>
-                </TabPanel>
+                <Tabs>
+                  <TabList>
+                    <Tab>Live feed of donations</Tab>
+                    <Tab>Live feed of funds used</Tab>
+                    <Tab>Top Donors</Tab>
+                  </TabList>
 
-                <TabPanel>
-                  {/* Content for Live feed of funds used */}
-                  <p>Usage of funds data here...</p>
-                </TabPanel>
+                  <TabPanel>
+                    {/* Content for Live feed of donations */}
+                    <p>Donations data here...</p>
+                  </TabPanel>
 
-                <TabPanel>
-                  {/* Content for Top Donors */}
-                  <p>List of top donors...</p>
-                </TabPanel>
-              </Tabs>
-            </>
-          )}
-        </Modal>
-      </div>
-    </>
+                  <TabPanel>
+                    {/* Content for Live feed of funds used */}
+                    <p>Usage of funds data here...</p>
+                  </TabPanel>
+
+                  <TabPanel>
+                    {/* Content for Top Donors */}
+                    <p>List of top donors...</p>
+                  </TabPanel>
+                </Tabs>
+              </>
+            )}
+          </Modal>
+        </div>
+      }/>
+      <Route path='/partners' element={<Partners />} />
+      </Routes>
+    </Router>
   );
 }
 
