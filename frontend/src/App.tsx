@@ -7,8 +7,11 @@ import { useState, useEffect } from "react";
 import Hero from "../components/Hero";
 import DisplayComponent from '../components/DisplayComponent';
 
+import "./App.css"; // Consider adding a CSS file for styling
+
 function App() {
   const [transactions, setTransactions] = useState<Types.Transaction[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   // Initialize AptosClient
   const client = new AptosClient("https://fullnode.testnet.aptoslabs.com");
@@ -17,48 +20,57 @@ function App() {
     const fetchTransactions = async () => {
       try {
         const txns = await client.getTransactions();
-        // Only keep the last 5 transactions
+        // Retain the last 5 transactions
         setTransactions(txns.slice(-5));
       } catch (error) {
-        console.error("Failed to fetch transactions:", error);
+        setError("Failed to fetch transactions");
+        console.error("Error fetching transactions:", error);
       }
     };
 
     const interval = setInterval(fetchTransactions, 5000);
 
-    // Clean up the interval on component unmount
     return () => clearInterval(interval);
   }, [client]);
 
   return (
-    <div>
-      <div className="navbar">
-        <div className="navbar-text">AidHarbor</div>
-        <div>
-          <WalletSelector />
-        </div>
-      </div>
+    <div className="app-container">
+      <header className="navbar">
+        <a href="/">
+          <img src="/ship.svg" alt="AidHarbor logo" className="logo" width={800} />
+        </a>
+        <WalletSelector />
+      </header>
 
-      <Hero
-        oneLiner="Empower. Relieve. Sustain."
-        description="Coordinate disaster relief and make cross-border payments sustainably with Aptos."
-        onCTAClick={() => {
-          console.log('CTA button clicked!');
-        }}
-        ctaText="Get Started"
-      />
+      <main>
+        <Hero
+          oneLiner="Empower. Relieve. Sustain."
+          description="Coordinate disaster relief and make cross-border payments sustainably with Aptos."
+          onCTAClick={() => console.log('CTA button clicked!')}
+          ctaText="Get Started"
+        />
 
-      {/* Displaying the last 5 transactions */}
-      {/* <div className="transactions">
-        <h3>Recent Transactions</h3>
-        <ul>
-          {transactions.map((txn, index) => (
-            <li key={index}>{txn.hash}</li>
-          ))}
-        </ul>
-      </div> */}
+        {/* Consider adding a conditional display in case of errors */}
+        {error && <div className="error">{error}</div>}
 
-      <DisplayComponent jsonToBeDisplayed={charities} />
+        {/* Section for transactions if needed in the future */}
+        {/* <section className="transactions">
+          <h3>Recent Transactions</h3>
+          <ul>
+            {transactions.map((txn, index) => (
+              <li key={index}>{txn.hash}</li>
+            ))}
+          </ul>
+        </section> */}
+
+        <section className="charities-section">
+          <DisplayComponent jsonToBeDisplayed={charities} />
+        </section>
+      </main>
+
+      <footer className="footer">
+        <p>&copy; 2023 AidHarbor. All rights reserved.</p>
+      </footer>
     </div>
   );
 }

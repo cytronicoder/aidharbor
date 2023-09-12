@@ -20,7 +20,7 @@ const Blurb: React.FC<BlurbProps> = ({
     return (
         <div className="blurb" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImage})` }}>
             <div className="info">
-                <img src={logo} alt={name + ' logo'} className="logo" />
+                <img src={logo} alt={name + ' logo'} className="blurb-logo" />
                 <h2 className="name">{name}</h2>
                 <p className="oneliner">{oneLiner}</p>
             </div>

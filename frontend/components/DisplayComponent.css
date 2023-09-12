@@ -9,17 +9,15 @@
 .display-component {
   max-width: 100%;
   justify-content: center;
-  /* border: 10px solid #fff; */
-  /* border-radius: 10px; */
   padding: 10px 0;
 }
 
 .marquee {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Adjust as needed */
+  padding: 10px 0;
 }
 
 .marquee-item {
-  padding: 10px; /* Adjust padding as needed */
+  margin: 0 10px;
 }
