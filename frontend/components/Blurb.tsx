@@ -6,7 +6,7 @@ interface BlurbProps {
     name: string;
     oneLiner: string;
     amountRaised?: number;
-    onCTAClick: () => void;
+    onCTAClick?: () => void;
 }
 
 const Blurb: React.FC<BlurbProps> = ({
