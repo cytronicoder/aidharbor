@@ -31,19 +31,28 @@ const DisplayComponent: React.FC<DisplayComponentProps> = ({ jsonToBeDisplayed }
     const [totalAptRaised, setTotalAptRaised] = useState(null);
 
     useEffect(() => {
-        setAccountHasList(true);
-        const apiUrl = 'https://fullnode.testnet.aptoslabs.com/v1/accounts/46237378154b23618ecabe046cf1832f536766eb095813c2b1265845e05d9adb/resource/0x46237378154b23618ecabe046cf1832f536766eb095813c2b1265845e05d9adb::CharityDonation::Charities';
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                // Access the "total_apt_raised" value from the JSON response
-                const totalAptRaisedValue = data.data.total_apt_raised;
-                setTotalAptRaised(totalAptRaisedValue);
-                console.log('totalAptRaisedValue: ', totalAptRaisedValue);
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
+        const fetchTotalRaised = () => {
+            setAccountHasList(true);
+            const apiUrl = 'https://fullnode.testnet.aptoslabs.com/v1/accounts/46237378154b23618ecabe046cf1832f536766eb095813c2b1265845e05d9adb/resource/0x46237378154b23618ecabe046cf1832f536766eb095813c2b1265845e05d9adb::CharityDonation::Charities';
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const totalAptRaisedValue = data.data.total_apt_raised;
+                    setTotalAptRaised(totalAptRaisedValue);
+                    console.log('totalAptRaisedValue: ', totalAptRaisedValue);
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        };
+
+        fetchTotalRaised();
+
+        const intervalId = setInterval(() => {
+            fetchTotalRaised();
+        }, 5000);
+
+        return () => clearInterval(intervalId);
     }, [account?.address]);
 
     const donateNow = async () => {
