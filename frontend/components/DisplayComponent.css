@@ -1,18 +1,29 @@
-.title {
-  font-size: 2rem;
-  font-weight: 600;
+.header {
   background-color: #051518;
   color: #fff;
   padding: 30px 0 0 30px;
   margin: 0;
 }
 
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+}
+
 .container {
   display: flex;
   background-color: #051518;
-  height: 30vh;
+  height: 25vh;
   align-items: center;
   justify-content: center;
+  padding-bottom: 30px;
 }
 
 .display-component {
