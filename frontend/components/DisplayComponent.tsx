@@ -17,7 +17,6 @@ interface Item {
     oneLiner: string;
     description?: string;
     detail?: string;
-    amountRaised?: number;
 }
 
 interface DisplayComponentProps {
@@ -58,24 +57,26 @@ const DisplayComponent: React.FC<DisplayComponentProps> = ({ jsonToBeDisplayed }
     };
 
     return (
-        <div className="container">
-            <div className="display-component">
-                <Marquee className='marquee' direction="left" pauseOnHover={true} speed={100}>
-                    {jsonToBeDisplayed.map(item => (
-                        <div className="marquee-item" key={item.id}>
-                            <Blurb
-                                backgroundImage={item.backgroundImage}
-                                logo={item.logo}
-                                name={item.name}
-                                oneLiner={item.oneLiner}
-                                amountRaised={item.amountRaised}
-                                onCTAClick={donateNow}
-                            />
-                        </div>
-                    ))}
-                </Marquee>
+        <>
+            <h1 className="title">Charities donation demo ⬇️</h1>
+            <div className="container">
+                <div className="display-component">
+                    <Marquee className='marquee' direction="left" pauseOnHover={true} speed={100}>
+                        {jsonToBeDisplayed.map(item => (
+                            <div className="marquee-item" key={item.id}>
+                                <Blurb
+                                    backgroundImage={item.backgroundImage}
+                                    logo={item.logo}
+                                    name={item.name}
+                                    oneLiner={item.oneLiner}
+                                    onCTAClick={donateNow}
+                                />
+                            </div>
+                        ))}
+                    </Marquee>
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

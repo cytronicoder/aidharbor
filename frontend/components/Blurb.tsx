@@ -5,7 +5,6 @@ interface BlurbProps {
     logo: string;
     name: string;
     oneLiner: string;
-    amountRaised?: number;
     onCTAClick?: () => void;
 }
 
@@ -14,7 +13,6 @@ const Blurb: React.FC<BlurbProps> = ({
     logo,
     name,
     oneLiner,
-    amountRaised,
     onCTAClick
 }) => {
     return (
@@ -25,7 +23,6 @@ const Blurb: React.FC<BlurbProps> = ({
                 <p className="oneliner">{oneLiner}</p>
             </div>
             <div className="amount">
-                {amountRaised && <span className="amount-raised">${amountRaised} raised so far</span>}
                 <button className="btn-cta" onClick={onCTAClick}>Donate</button>
             </div>
         </div>
