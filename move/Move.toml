@@ -1,9 +1,12 @@
 [package]
-name = 'my_app'
-version = '1.0.0'
-[dependencies.AptosFramework]
-git = 'https://github.com/aptos-labs/aptos-core.git'
-rev = 'main'
-subdir = 'aptos-move/framework/aptos-framework'
+name = "Charity"
+version = "0.0.0"
+
+[dependencies]
+AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", subdir="aptos-move/framework/aptos-framework/", rev="main" }
+AptosStdlib = { git = "https://github.com/aptos-labs/aptos-core.git", subdir="aptos-move/framework/aptos-stdlib/", rev="main" }
+AptosToken = { git = "https://github.com/aptos-labs/aptos-core.git", subdir="aptos-move/framework/aptos-token/", rev="main" }
+
 [addresses]
-module_addr='_'
+charity_donation = "_"
+aptos_framework = "0x1"
