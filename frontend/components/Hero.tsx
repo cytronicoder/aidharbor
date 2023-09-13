@@ -4,7 +4,7 @@ import './Hero.css';
 interface HeroProps {
     oneLiner: string;
     description: string;
-    onCTAClick: () => void;
+    onCTAClick?: () => void;
     ctaText: string;
 }
 
