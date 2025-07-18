@@ -1,3 +1,5 @@
+### 📂 This repository is now archived as a finished project.
+
 # AidHabor
 
 Aptos-powered platform for **transparent disaster relief coordination** and eco-conscious **cross-border payments**
